@@ -8,9 +8,10 @@ export const fetchNews = page => {
 	};
 };
 
-export const login = () => {
+export const login = username => {
 	return {
 		type: 'LOGIN',
+		payload: username,
 	};
 };
 

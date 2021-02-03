@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import injectSheet from 'react-jss';
-import Alert from '../Alert/Alert';
-import { style } from './style';
+import { Link } from 'react-router-dom';
+import Alert from '../../Alert/Alert';
+import { style } from '../style';
 
 const Signin = ({ login, classes }) => {
 	const [authData, setAuthData] = useState({ login: '', password: '' });
@@ -16,9 +17,10 @@ const Signin = ({ login, classes }) => {
 
 	const checkAuthData = e => {
 		e.preventDefault();
-		if (authData.login === 'Admin' && authData.password === '12345') {
+		let info = JSON.parse(localStorage.getItem('users')) ?? {};
+		if (info[authData.login] && info[authData.login].password === authData.password) {
 			localStorage.setItem('user', JSON.stringify(authData));
-			login();
+			login(authData.login);
 		} else {
 			setAlertShowing({ ...alertShowing, text: 'Wrong username or password', showing: true });
 			setTimeout(() => setAlertShowing(false), 2000);
@@ -49,6 +51,9 @@ const Signin = ({ login, classes }) => {
 				/>
 				<input value="Log in" type="submit" className={classes.input} />
 			</form>
+			<Link to="/signup" className={classes.link}>
+				Sign up
+			</Link>
 
 			{alertShowing.showing && (
 				<Alert text={alertShowing.text} closeFunc={() => setAlertShowing({ ...alertShowing, showing: false })} />

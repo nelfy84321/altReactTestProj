@@ -12,18 +12,18 @@ const Header = ({ auth, logout, classes }) => {
 			</Button>
 			<h1 className={classes.title}>My application</h1>
 			<nav className={classes.navbar}>
-				<NavLink to="/" exact className={classes.link}>
+				<NavLink exact to="/" className={classes.link} activeClassName={classes.active}>
 					Home
 				</NavLink>
-				<NavLink to="/news" className={classes.link}>
+				<NavLink to="/news" className={classes.link} activeClassName={classes.active}>
 					News
 				</NavLink>
 				{auth ? (
-					<NavLink to="/profile" className={classes.link}>
+					<NavLink to="/profile" className={classes.link} activeClassName={classes.active}>
 						Profile
 					</NavLink>
 				) : (
-					<NavLink to="/signin" className={classes.link}>
+					<NavLink to="/signin" className={classes.link} activeClassName={classes.active}>
 						<Button variant="contained">Sign In</Button>
 					</NavLink>
 				)}
