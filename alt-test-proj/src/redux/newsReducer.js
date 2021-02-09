@@ -1,5 +1,5 @@
 import { FETCH_NEWS, NEXT_PAGE, PREV_PAGE, SWITCH_LOADER } from './types';
-import { pageStep } from './constans';
+import { pageStep } from './../constans';
 
 const initState = {
 	news: [],

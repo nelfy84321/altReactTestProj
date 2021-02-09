@@ -19,4 +19,12 @@ export const style = {
 		border: '2px solid #ccc',
 		borderRadius: 2,
 	},
+
+	link: {
+		display: 'block',
+		margin: '0 auto',
+		textAlign: 'center',
+		textDecoration: 'none',
+		color: 'grey',
+	},
 };

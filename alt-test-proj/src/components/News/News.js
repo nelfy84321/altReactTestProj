@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import { Button, CircularProgress } from '@material-ui/core';
 import Post from './Post/Post';
 import { style } from './style';
+import { pageStep } from './../../constans';
 
 const News = ({ classes, ...props }) => {
 	const paginator = (
@@ -18,11 +19,11 @@ const News = ({ classes, ...props }) => {
 					</td>
 					<td className={classes.centralCell}>
 						<span>
-							Page:&nbsp;<span>{props.page ? props.page / 10 + 1 : props.page + 1}</span>
+							Page:&nbsp;<span>{props.page ? props.page / pageStep + 1 : props.page + 1}</span>
 						</span>
 					</td>
 					<td className={classes.rightCell}>
-						{props.page / 10 === 9 ? null : (
+						{props.page / pageStep === 9 ? null : (
 							<Button variant="outlined" className={classes.btn} onClick={props.nextPage} disabled={props.loader}>
 								Next
 							</Button>

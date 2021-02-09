@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../redux/actions';
+import { login } from '../../../redux/actions';
 import Signin from './Signin';
 
 class SigninContainer extends Component {
@@ -13,4 +13,10 @@ const mapStateToProps = state => ({
 	auth: state.auth.auth,
 });
 
-export default connect(mapStateToProps, { login })(SigninContainer);
+const mapDispatchToProps = dispatch => {
+	return {
+		login: username => dispatch(login(username)),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SigninContainer);

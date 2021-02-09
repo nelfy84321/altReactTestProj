@@ -24,4 +24,8 @@ export const style = {
 	link: {
 		textDecoration: 'none',
 	},
+
+	active: {
+		fontWeight: 700,
+	},
 };
