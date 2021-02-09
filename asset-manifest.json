@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/altReactTestProj/static/js/main.104ceac2.chunk.js",
-    "main.js.map": "/altReactTestProj/static/js/main.104ceac2.chunk.js.map",
+    "main.js": "/altReactTestProj/static/js/main.4ddf60ca.chunk.js",
+    "main.js.map": "/altReactTestProj/static/js/main.4ddf60ca.chunk.js.map",
     "runtime-main.js": "/altReactTestProj/static/js/runtime-main.08fc477b.js",
     "runtime-main.js.map": "/altReactTestProj/static/js/runtime-main.08fc477b.js.map",
-    "static/js/2.a90fc152.chunk.js": "/altReactTestProj/static/js/2.a90fc152.chunk.js",
-    "static/js/2.a90fc152.chunk.js.map": "/altReactTestProj/static/js/2.a90fc152.chunk.js.map",
+    "static/js/2.198c7dbb.chunk.js": "/altReactTestProj/static/js/2.198c7dbb.chunk.js",
+    "static/js/2.198c7dbb.chunk.js.map": "/altReactTestProj/static/js/2.198c7dbb.chunk.js.map",
     "index.html": "/altReactTestProj/index.html",
-    "static/js/2.a90fc152.chunk.js.LICENSE.txt": "/altReactTestProj/static/js/2.a90fc152.chunk.js.LICENSE.txt"
+    "static/js/2.198c7dbb.chunk.js.LICENSE.txt": "/altReactTestProj/static/js/2.198c7dbb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.08fc477b.js",
-    "static/js/2.a90fc152.chunk.js",
-    "static/js/main.104ceac2.chunk.js"
+    "static/js/2.198c7dbb.chunk.js",
+    "static/js/main.4ddf60ca.chunk.js"
   ]
 }
