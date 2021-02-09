@@ -32,3 +32,17 @@ export const prevPage = () => {
 		type: 'PREV_PAGE',
 	};
 };
+
+export const showAlert = alertText => {
+	return {
+		type: 'SHOW_ALERT',
+		payload: alertText,
+	};
+};
+
+export const hideAlert = () => {
+	return {
+		type: 'HIDE_ALERT',
+		payload: '',
+	};
+};

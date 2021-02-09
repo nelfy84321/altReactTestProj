@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from './redux/actions';
+import { login, hideAlert } from './redux/actions';
 import App from './App';
 
 class AppContainer extends Component {
@@ -9,12 +9,21 @@ class AppContainer extends Component {
 	}
 
 	render() {
-		return <App auth={this.props.auth} />;
+		return <App auth={this.props.auth} alert={this.props.alert} alertText={this.props.alertText} hideAlert={this.props.hideAlert}/>;
 	}
 }
 
 const mapStateToProps = state => ({
 	auth: state.auth.auth,
+	alert: state.alert.showAlert,
+	alertText: state.alert.alertText
 });
 
-export default connect(mapStateToProps, { login })(AppContainer);
+const mapDispatchToProps = dispatch => {
+	return {
+		login: username => dispatch(login(username)),
+		hideAlert: () => dispatch(hideAlert()),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);

@@ -7,9 +7,10 @@ import SigninContainer from './components/Auth/SignIn/SigninContainer';
 import SignUpContainer from './components/Auth/SignUp/SignUpContainer';
 import NewsContainer from './components/News/NewsContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import Alert from './components/Alert/Alert';
 import { style } from './style.js';
 
-function App({ auth, classes }) {
+function App({ auth, alert, alertText, hideAlert, classes }) {
 	return (
 		<div className={classes.app}>
 			<BrowserRouter>
@@ -25,6 +26,9 @@ function App({ auth, classes }) {
 					<Route path="/signin">{auth ? <Redirect to="/profile" /> : <SigninContainer />}</Route>
 					<Route path="/signup">{auth ? <Redirect to="/" /> : <SignUpContainer />}</Route>
 				</Switch>
+				{alert && (
+				<Alert text={alertText} closeFunc={() => hideAlert()} />
+			)}
 			</BrowserRouter>
 		</div>
 	);

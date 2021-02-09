@@ -1,22 +1,20 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../../redux/actions';
+import { login, showAlert, hideAlert } from '../../../redux/actions';
 import Signin from './Signin';
 
 class SigninContainer extends Component {
 	render() {
-		return <Signin login={this.props.login} />;
+		return <Signin login={this.props.login} showAlert={this.props.showAlert} hideAlert={this.props.hideAlert} />;
 	}
 }
-
-const mapStateToProps = state => ({
-	auth: state.auth.auth,
-});
 
 const mapDispatchToProps = dispatch => {
 	return {
 		login: username => dispatch(login(username)),
+		showAlert: alertText => dispatch(showAlert(alertText)),
+		hideAlert: () => dispatch(hideAlert()),
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SigninContainer);
+export default connect(null, mapDispatchToProps)(SigninContainer);

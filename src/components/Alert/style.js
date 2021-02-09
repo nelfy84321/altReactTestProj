@@ -7,7 +7,7 @@ export const style = {
 		width: 'fit-content',
 		height: 50,
 		backgroundColor: 'rgb(243, 226, 128)',
-		fontWeight: 600,
+		fontWeight: 700,
 		fontSize: 14,
 		display: 'flex',
 		alignItems: 'center',

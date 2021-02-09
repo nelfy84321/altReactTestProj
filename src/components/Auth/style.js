@@ -10,7 +10,7 @@ export const style = {
 		width: 400,
 	},
 	title: {
-		fontWeight: 600,
+		fontWeight: 700,
 		textAlign: 'center',
 	},
 	input: {

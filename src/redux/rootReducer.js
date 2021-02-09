@@ -1,8 +1,10 @@
-import { combineReducers } from "redux";
-import { authReducer } from "./authReducer";
-import { newsReducer } from "./newsReducer";
+import { combineReducers } from 'redux';
+import { alertReducer } from './alertReducer';
+import { authReducer } from './authReducer';
+import { newsReducer } from './newsReducer';
 
 export const rootReducer = combineReducers({
-    news: newsReducer,
-    auth: authReducer
-})
+	news: newsReducer,
+	auth: authReducer,
+	alert: alertReducer,
+});

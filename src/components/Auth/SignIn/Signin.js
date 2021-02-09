@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom';
-import Alert from '../../Alert/Alert';
 import { style } from '../style';
 
-const Signin = ({ login, classes }) => {
+const Signin = ({ login, showAlert, hideAlert, classes }) => {
 	const [authData, setAuthData] = useState({ login: '', password: '' });
-	const [alertShowing, setAlertShowing] = useState({ text: '', showing: false });
 
 	const handleInputChange = event => {
 		setAuthData({
@@ -22,8 +20,8 @@ const Signin = ({ login, classes }) => {
 			localStorage.setItem('user', JSON.stringify(authData));
 			login(authData.login);
 		} else {
-			setAlertShowing({ ...alertShowing, text: 'Wrong username or password', showing: true });
-			setTimeout(() => setAlertShowing(false), 2000);
+			showAlert('Wrong username or password');
+			setTimeout(() => hideAlert(), 2000);
 		}
 	};
 
@@ -54,10 +52,6 @@ const Signin = ({ login, classes }) => {
 			<Link to="/signup" className={classes.link}>
 				Sign up
 			</Link>
-
-			{alertShowing.showing && (
-				<Alert text={alertShowing.text} closeFunc={() => setAlertShowing({ ...alertShowing, showing: false })} />
-			)}
 		</section>
 	);
 };

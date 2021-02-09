@@ -1,17 +1,19 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../../redux/actions';
+import { login, showAlert, hideAlert } from '../../../redux/actions';
 import SignUp from './SignUp';
 
-export class SignUpContainer extends Component {
+class SignUpContainer extends Component {
 	render() {
-		return <SignUp login={this.props.login} />;
+		return <SignUp login={this.props.login} showAlert={this.props.showAlert} hideAlert={this.props.hideAlert} />;
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
 		login: username => dispatch(login(username)),
+		showAlert: alertText => dispatch(showAlert(alertText)),
+		hideAlert: () => dispatch(hideAlert()),
 	};
 };
 
