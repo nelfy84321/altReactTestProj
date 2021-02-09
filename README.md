@@ -1,6 +1,6 @@
 # About "React Test Project"
 
-##### site is published at https://nelfy84321.github.io/altReactTestProj/ \
+##### site is published at https://nelfy84321.github.io/altReactTestProj/ 
 
 This application is a SPA that has the following pages:\
 “/ ” - the main page, which contains information about the application, about me and about my experience.\
@@ -9,7 +9,7 @@ This application is a SPA that has the following pages:\
 “/profile” - a page where the authorized user can take notes for himself. App will redirect the user to profile page if an unauthorized user tries to enter this page.\
 There is validation on the registration page: the username must be unique; the password and password confirmation fields must match. The user will see an alarm if one of the conditions is not met.\
 The correctness of the username and password on the login page is checked.\
-All information about registered users and notes is stored in localStorage.\
+All information about registered users and notes is stored in localStorage.
 
 ##### Stack: react, react-router, redux, redux-thunk.
 
