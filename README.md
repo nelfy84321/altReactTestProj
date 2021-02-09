@@ -1,5 +1,7 @@
 # About "React Test Project"
 
+##### site is published at https://nelfy84321.github.io/altReactTestProj/ \
+
 This application is a SPA that has the following pages:\
 “/ ” - the main page, which contains information about the application, about me and about my experience.\
 “/news” - a page with news, which are loaded from the jasonplaceholder. Pagination works.\
