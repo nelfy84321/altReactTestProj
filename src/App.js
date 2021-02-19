@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import injectSheet from 'react-jss';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Homepage from './components/Homepage/Homepage';
@@ -13,7 +13,7 @@ import { style } from './style.js';
 function App({ auth, alert, alertText, hideAlert, classes }) {
 	return (
 		<div className={classes.app}>
-			<BrowserRouter>
+			<HashRouter>
 				<HeaderContainer />
 				<Switch>
 					<Route exact path="/">
@@ -26,10 +26,8 @@ function App({ auth, alert, alertText, hideAlert, classes }) {
 					<Route path="/signin">{auth ? <Redirect to="/profile" /> : <SigninContainer />}</Route>
 					<Route path="/signup">{auth ? <Redirect to="/" /> : <SignUpContainer />}</Route>
 				</Switch>
-				{alert && (
-				<Alert text={alertText} closeFunc={() => hideAlert()} />
-			)}
-			</BrowserRouter>
+				{alert && <Alert text={alertText} closeFunc={() => hideAlert()} />}
+			</HashRouter>
 		</div>
 	);
 }
