@@ -5,18 +5,25 @@ import App from './App';
 
 class AppContainer extends Component {
 	componentDidMount() {
-		window.localStorage.getItem('user') && this.props.login();
+		window.localStorage.getItem('user') && this.props.login(JSON.parse(window.localStorage.getItem('user')).login);
 	}
 
 	render() {
-		return <App auth={this.props.auth} alert={this.props.alert} alertText={this.props.alertText} hideAlert={this.props.hideAlert}/>;
+		return (
+			<App
+				auth={this.props.auth}
+				alert={this.props.alert}
+				alertText={this.props.alertText}
+				hideAlert={this.props.hideAlert}
+			/>
+		);
 	}
 }
 
 const mapStateToProps = state => ({
 	auth: state.auth.auth,
 	alert: state.alert.showAlert,
-	alertText: state.alert.alertText
+	alertText: state.alert.alertText,
 });
 
 const mapDispatchToProps = dispatch => {
