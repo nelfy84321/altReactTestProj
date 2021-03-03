@@ -15,26 +15,25 @@ function Profile({ user, classes }) {
 		myPostList && setPosts(myPostList);
 	}, [user]);
 
+	useEffect(() => {
+		const localS = JSON.parse(window.localStorage.getItem('posts'));
+		localS[user] = [...posts];
+		window.localStorage.setItem('posts', JSON.stringify(localS));
+	}, [posts, user]);
+
 	function handleInputChange(event) {
 		setPost(event.target.value);
 	}
 
 	const addPost = e => {
 		e.preventDefault();
-		debugger;
-		let posts = JSON.parse(localStorage.getItem('posts'));
-		if (!posts[user]) posts[user] = [];
-		posts[user].push({ text: post, date: Date.now(), completed: false });
-		localStorage.setItem('posts', JSON.stringify(posts));
-		setPosts(posts[user]);
+		let newPost = { text: post, date: Date.now(), completed: false };
+		setPosts([...posts, newPost]);
 		setPost('');
 	};
 
 	const delPost = el => {
-		let posts = JSON.parse(localStorage.getItem('posts'));
-		posts[user] = posts[user].filter(elem => elem.date !== el.date);
-		localStorage.setItem('posts', JSON.stringify(posts));
-		setPosts(posts[user]);
+		setPosts(posts.filter(elem => elem.date !== el.date));
 	};
 
 	return (
